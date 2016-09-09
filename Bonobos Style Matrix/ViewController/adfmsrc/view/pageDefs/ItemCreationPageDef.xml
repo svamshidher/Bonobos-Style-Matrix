@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="ItemCreationPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XxChildSkusView1" RangeSize="25" DataControl="AppModuleDataControl" id="XxChildSkusView1Iterator"/>
+    <searchRegion Binds="XxChildSkusView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="XxChildSkusView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="XxChildSkusView1Iterator" id="XxChildSkusView1">
+      <nodeDefinition DefName="model.XxChildSkusView" Name="XxChildSkusView10">
+        <AttrNames>
+          <Item Value="Mastersku"/>
+          <Item Value="Color"/>
+          <Item Value="Code"/>
+          <Item Value="Size1"/>
+          <Item Value="Size2"/>
+          <Item Value="Size3"/>
+          <Item Value="Size4"/>
+          <Item Value="Size5"/>
+          <Item Value="Size6"/>
+          <Item Value="Size7"/>
+          <Item Value="Size8"/>
+          <Item Value="Size9"/>
+          <Item Value="Size10"/>
+          <Item Value="Size11"/>
+          <Item Value="Size12"/>
+          <Item Value="Size13"/>
+          <Item Value="Size14"/>
+          <Item Value="Size15"/>
+          <Item Value="Size16"/>
+          <Item Value="Size17"/>
+          <Item Value="Size18"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="XxChildSkusView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="XxChildSkusView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

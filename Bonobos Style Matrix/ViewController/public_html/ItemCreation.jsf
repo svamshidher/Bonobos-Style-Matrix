@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="ItemCreation.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <p xmlns="http://www.w3.org/1999/xhtml">
+                <af:inputText label="Style SKU:" id="it1" binding="#{ItemBackingBean.masterSKU}" autoSubmit="true"/>
+            </p>
+            <p xmlns="http://www.w3.org/1999/xhtml">
+                 
+            </p>
+            <af:button actionListener="#{bindings.CreateInsert.execute}" text="Insert Row"
+                       disabled="#{!bindings.CreateInsert.enabled}" id="b2"/>
+            <af:button actionListener="#{bindings.Delete.execute}" text="Delete" disabled="#{!bindings.Delete.enabled}"
+                       id="b1"/>
+            <af:table value="#{bindings.XxChildSkusView1.collectionModel}" var="row"
+                      rows="#{bindings.XxChildSkusView1.rangeSize}"
+                      emptyText="#{bindings.XxChildSkusView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" selectedRowKeys="#{bindings.XxChildSkusView1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.XxChildSkusView1.collectionModel.makeCurrent}" rowSelection="single"
+                      fetchSize="#{bindings.XxChildSkusView1.rangeSize}"
+                      filterModel="#{bindings.XxChildSkusView1Query.queryDescriptor}" filterVisible="false"
+                      queryListener="#{bindings.XxChildSkusView1Query.processQuery}" varStatus="vs" id="t1"
+                      partialTriggers="::b2 ::b1" autoHeightRows="0">
+               <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Color.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Color.label}" id="c2">
+                    <af:inputText value="#{row.bindings.Color.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Color.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Color.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Color.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Color.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Color.tooltip}" id="it3"
+                                 >
+                        <f:validator binding="#{row.bindings.Color.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Code.name}" filterable="true" sortable="true"
+                           headerText="#{bindings.XxChildSkusView1.hints.Code.label}" id="c3">
+                    <af:inputText value="#{row.bindings.Code.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Code.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Code.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Code.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Code.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Code.tooltip}" id="it4"
+                                  autoSubmit="true" binding="#{ItemBackingBean.code}"
+                                  valueChangeListener="#{ItemBackingBean.CodeValueChangeListner}">
+                        <f:validator binding="#{row.bindings.Code.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size1.name}" filterable="true"
+                           sortable="true" id="c4" headerText="XS-TL">
+                    <af:inputText value="#{row.bindings.Size1.inputValue}"
+                                  label="XS-TL"
+                                  required="#{bindings.XxChildSkusView1.hints.Size1.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size1.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size1.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size1.tooltip}" id="it5"
+                                  binding="#{ItemBackingBean.size1}">
+                        <f:validator binding="#{row.bindings.Size1.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size2.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size2.label}" id="c5">
+                    <af:inputText value="#{row.bindings.Size2.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size2.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size2.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size2.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size2.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size2.tooltip}" id="it6">
+                        <f:validator binding="#{row.bindings.Size2.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size3.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size3.label}" id="c6">
+                    <af:inputText value="#{row.bindings.Size3.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size3.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size3.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size3.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size3.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size3.tooltip}" id="it7">
+                        <f:validator binding="#{row.bindings.Size3.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size4.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size4.label}" id="c7">
+                    <af:inputText value="#{row.bindings.Size4.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size4.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size4.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size4.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size4.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size4.tooltip}" id="it8">
+                        <f:validator binding="#{row.bindings.Size4.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size5.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size5.label}" id="c8">
+                    <af:inputText value="#{row.bindings.Size5.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size5.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size5.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size5.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size5.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size5.tooltip}" id="it9">
+                        <f:validator binding="#{row.bindings.Size5.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size6.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size6.label}" id="c9">
+                    <af:inputText value="#{row.bindings.Size6.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size6.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size6.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size6.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size6.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size6.tooltip}" id="it10">
+                        <f:validator binding="#{row.bindings.Size6.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size7.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size7.label}" id="c10">
+                    <af:inputText value="#{row.bindings.Size7.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size7.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size7.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size7.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size7.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size7.tooltip}" id="it11">
+                        <f:validator binding="#{row.bindings.Size7.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size8.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size8.label}" id="c11">
+                    <af:inputText value="#{row.bindings.Size8.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size8.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size8.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size8.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size8.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size8.tooltip}" id="it12">
+                        <f:validator binding="#{row.bindings.Size8.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size9.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size9.label}" id="c12">
+                    <af:inputText value="#{row.bindings.Size9.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size9.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size9.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size9.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size9.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size9.tooltip}" id="it13">
+                        <f:validator binding="#{row.bindings.Size9.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size10.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size10.label}" id="c13">
+                    <af:inputText value="#{row.bindings.Size10.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size10.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size10.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size10.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size10.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size10.tooltip}" id="it14">
+                        <f:validator binding="#{row.bindings.Size10.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size11.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size11.label}" id="c14">
+                    <af:inputText value="#{row.bindings.Size11.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size11.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size11.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size11.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size11.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size11.tooltip}" id="it15">
+                        <f:validator binding="#{row.bindings.Size11.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size12.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size12.label}" id="c15">
+                    <af:inputText value="#{row.bindings.Size12.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size12.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size12.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size12.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size12.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size12.tooltip}" id="it16">
+                        <f:validator binding="#{row.bindings.Size12.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size13.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size13.label}" id="c16">
+                    <af:inputText value="#{row.bindings.Size13.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size13.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size13.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size13.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size13.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size13.tooltip}" id="it17">
+                        <f:validator binding="#{row.bindings.Size13.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size14.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size14.label}" id="c17">
+                    <af:inputText value="#{row.bindings.Size14.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size14.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size14.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size14.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size14.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size14.tooltip}" id="it18">
+                        <f:validator binding="#{row.bindings.Size14.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size15.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size15.label}" id="c18">
+                    <af:inputText value="#{row.bindings.Size15.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size15.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size15.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size15.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size15.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size15.tooltip}" id="it19">
+                        <f:validator binding="#{row.bindings.Size15.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size16.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size16.label}" id="c19">
+                    <af:inputText value="#{row.bindings.Size16.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size16.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size16.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size16.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size16.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size16.tooltip}" id="it20">
+                        <f:validator binding="#{row.bindings.Size16.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size17.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size17.label}" id="c20">
+                    <af:inputText value="#{row.bindings.Size17.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size17.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size17.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size17.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size17.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size17.tooltip}" id="it21">
+                        <f:validator binding="#{row.bindings.Size17.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.XxChildSkusView1.hints.Size18.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.XxChildSkusView1.hints.Size18.label}" id="c21">
+                    <af:inputText value="#{row.bindings.Size18.inputValue}"
+                                  label="#{bindings.XxChildSkusView1.hints.Size18.label}"
+                                  required="#{bindings.XxChildSkusView1.hints.Size18.mandatory}"
+                                  columns="#{bindings.XxChildSkusView1.hints.Size18.displayWidth}"
+                                  maximumLength="#{bindings.XxChildSkusView1.hints.Size18.precision}"
+                                  shortDesc="#{bindings.XxChildSkusView1.hints.Size18.tooltip}" id="it22">
+                        <f:validator binding="#{row.bindings.Size18.validator}"/>
+                    </af:inputText>
+                </af:column>
+            </af:table>
+        </af:form>
+    </af:document>
+</f:view>
