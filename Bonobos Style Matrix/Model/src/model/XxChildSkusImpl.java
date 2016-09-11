@@ -36,7 +36,9 @@ public class XxChildSkusImpl extends EntityImpl {
         Size15,
         Size16,
         Size17,
-        Size18;
+        Size18,
+        Size1Descr,
+        MasterskuDescr;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -82,6 +84,8 @@ public class XxChildSkusImpl extends EntityImpl {
     public static final int SIZE16 = AttributesEnum.Size16.index();
     public static final int SIZE17 = AttributesEnum.Size17.index();
     public static final int SIZE18 = AttributesEnum.Size18.index();
+    public static final int SIZE1DESCR = AttributesEnum.Size1Descr.index();
+    public static final int MASTERSKUDESCR = AttributesEnum.MasterskuDescr.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -433,6 +437,38 @@ public class XxChildSkusImpl extends EntityImpl {
         setAttributeInternal(SIZE18, value);
     }
 
+
+    /**
+     * Gets the attribute value for Size1Descr, using the alias name Size1Descr.
+     * @return the value of Size1Descr
+     */
+    public String getSize1Descr() {
+        return (String) getAttributeInternal(SIZE1DESCR);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Size1Descr.
+     * @param value value to set the Size1Descr
+     */
+    public void setSize1Descr(String value) {
+        setAttributeInternal(SIZE1DESCR, value);
+    }
+
+    /**
+     * Gets the attribute value for MasterskuDescr, using the alias name MasterskuDescr.
+     * @return the value of MasterskuDescr
+     */
+    public String getMasterskuDescr() {
+        return (String) getAttributeInternal(MASTERSKUDESCR);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for MasterskuDescr.
+     * @param value value to set the MasterskuDescr
+     */
+    public void setMasterskuDescr(String value) {
+        setAttributeInternal(MASTERSKUDESCR, value);
+    }
 
     /**
      * @param size1 key constituent

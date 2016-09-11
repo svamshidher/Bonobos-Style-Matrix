@@ -45,7 +45,7 @@
                   </hash>
                </list>
             </hash>
-            <url n="earURL" path="deploy/Bonobos_App1.ear"/>
+            <url n="earURL" path="deploy/ADF_Demo_App.ear"/>
             <value n="enterpriseAppName" v="Bonobos Style Matrix_Project1_Bonobos Style Matrix"/>
             <hash n="fileGroups">
                <list n="groups">

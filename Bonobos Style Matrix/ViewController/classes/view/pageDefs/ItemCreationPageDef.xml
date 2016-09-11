@@ -33,11 +33,19 @@
           <Item Value="Size16"/>
           <Item Value="Size17"/>
           <Item Value="Size18"/>
+          <Item Value="Size1Descr"/>
+          <Item Value="MasterskuDescr"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
     <action IterBinding="XxChildSkusView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="XxChildSkusView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="XxChildSkusView1Iterator" id="MasterskuDescr">
+      <AttrNames>
+        <Item Value="MasterskuDescr"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

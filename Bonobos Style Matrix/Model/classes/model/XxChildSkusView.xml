@@ -6,13 +6,36 @@
   Name="XxChildSkusView"
   Version="12.2.1.20.47"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
-  CustomQuery="false"
-  SelectAllAttributes="false"
+  CustomQuery="true"
   PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT XxChildSkus.MASTERSKU,     
+       XxChildSkus.MASTERSKU_DESCR,   
+       XxChildSkus.COLOR,     
+       XxChildSkus.CODE,     
+       XxChildSkus.SIZE1,     
+       XxChildSkus.SIZE2,     
+       XxChildSkus.SIZE3,     
+       XxChildSkus.SIZE4,     
+       XxChildSkus.SIZE5,     
+       XxChildSkus.SIZE6,     
+       XxChildSkus.SIZE7,     
+       XxChildSkus.SIZE8,     
+       XxChildSkus.SIZE9,     
+       XxChildSkus.SIZE10,     
+       XxChildSkus.SIZE11,     
+       XxChildSkus.SIZE12,     
+       XxChildSkus.SIZE13,     
+       XxChildSkus.SIZE14,     
+       XxChildSkus.SIZE15,     
+       XxChildSkus.SIZE16,     
+       XxChildSkus.SIZE17,     
+       XxChildSkus.SIZE18    
+FROM  XX_CHILD_SKUS XxChildSkus  
+WHERE MASTERSKU IS NULL]]></SQLQuery>
   <EntityUsage
     Name="XxChildSkus"
     Entity="model.XxChildSkus"/>
@@ -22,6 +45,13 @@
     EntityAttrName="Mastersku"
     EntityUsage="XxChildSkus"
     AliasName="MASTERSKU"/>
+  <ViewAttribute
+    Name="MasterskuDescr"
+    PrecisionRule="true"
+    AliasName="MASTERSKU_DESCR"
+    EntityAttrName="MasterskuDescr"
+    EntityUsage="XxChildSkus">
+   </ViewAttribute>
   <ViewAttribute
     Name="Color"
     PrecisionRule="true"
@@ -142,4 +172,16 @@
     EntityAttrName="Size18"
     EntityUsage="XxChildSkus"
     AliasName="SIZE18"/>
+  <ViewAttribute
+    Name="Size1Descr"
+    PrecisionRule="true"
+    AliasName="SIZE1_DESCR"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
 </ViewObject>
